@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="home-container">
+    <section class="hero">
+        <h1>{{ welcome_message }}</h1>
+        <p>Tu tienda en línea de confianza</p>
+        <a href="{% url 'products:product_list' %}" class="btn-primary">Ver Productos</a>
+    </section>
+
+    <section class="features">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3> Envío Gratis</h3>
+                <p>En compras mayores a $500</p>
+            </div>
+            <div class="feature">
+                <h3> Pago Seguro</h3>
+                <p>Múltiples métodos de pago</p>
+            </div>
+            <div class="feature">
+                <h3> Calidad</h3>
+                <p>Productos de primera calidad</p>
+            </div>
+            <div class="feature">
+                <h3> Soporte 24/7</h3>
+                <p>Siempre estamos para ayudarte</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Store{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="{% url 'home:index' %}" class="logo">
+                    <h1>Django Store</h1>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home:index' %}">Inicio</a></li>
+                    <li><a href="{% url 'products:product_list' %}">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Django Store. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

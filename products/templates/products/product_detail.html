@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="product-detail-container">
+    <a href="{% url 'products:product_list' %}" class="back-link">← Volver a productos</a>
+    
+    <div class="product-detail">
+        <div class="product-image">
+            <img src="{{ product.image }}" alt="{{ product.name }}">
+        </div>
+        
+        <div class="product-info-detail">
+            <h1>{{ product.name }}</h1>
+            <p class="product-category">Categoría: {{ product.category }}</p>
+            <p class="product-price-large">${{ product.price }}</p>
+            <p class="product-description-full">{{ product.description }}</p>
+            
+            <div class="product-meta">
+                <p><strong>Stock disponible:</strong> {{ product.stock }} unidades</p>
+            </div>
+            
+            <div class="product-actions">
+                <button class="btn-primary">Agregar al Carrito</button>
+                <button class="btn-secondary">Comprar Ahora</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
